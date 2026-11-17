@@ -26,6 +26,7 @@ public class Insecto extends Animal {
         Random r = new Random();
         this.numeroPatas = r.nextInt(6) + 1;
         this.color = COLORES[r.nextInt( COLORES.length - 1 )];
+        this.tieneAlas = r.nextBoolean();
     }
 
     public Insecto (String nombre, int edad, float peso, int numeroPatas,  boolean tieneAlas, String color) {
