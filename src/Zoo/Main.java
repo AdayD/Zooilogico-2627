@@ -2,6 +2,7 @@ package Zoo;
 
 import Zoo.Anfibio.Rana;
 import Zoo.Anfibio.Salamandra;
+import Zoo.Insecto.Abeja;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ public class Main {
 
         // Cada alumno puede añadir su animal así:
         // listaDeAnimales.add(new SuAnimal());
+        listaDeAnimales.add(new Abeja());
 
         for (Animal animal : listaDeAnimales) {
             System.out.println("Observando las acciones de " + animal.getClass().getSimpleName() + ":");
