@@ -4,6 +4,8 @@ import Zoo.Animal;
 
 import java.util.Random;
 
+//Crer Clase Ave
+
     public class Ave extends Animal {
         private String colorPlumas;
         private double envergadura;

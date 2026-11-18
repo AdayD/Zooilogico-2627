@@ -2,7 +2,7 @@ package Zoo.Ave;
 
 import java.util.Random;
 
-//Creación Loro
+//Crear Loro
 public class Loro extends Ave{
     private static final String[] colorPlumaje = {"Marrón", "Blanco", "Gris", "Azul", "Rojo", "Amarillo", "Verde"};
 
