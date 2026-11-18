@@ -18,7 +18,6 @@ public class Main {
 
         // Cada alumno puede añadir su animal así:
         // listaDeAnimales.add(new SuAnimal());
-        listaDeAnimales.add(new Abeja());
 
         for (Animal animal : listaDeAnimales) {
             System.out.println("Observando las acciones de " + animal.getClass().getSimpleName() + ":");
