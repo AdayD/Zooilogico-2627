@@ -20,7 +20,14 @@ public class Abeja extends Insecto {
 
     @Override
     public void moverse() {
-        System.out.println(this.getNombre() + " se mueve volando.");
+        Random r = new Random();
+        int num = r.nextInt(10);
+
+        if (num > 8) {
+            System.out.println(this.getNombre() + " viene a picarte!!!");
+        } else {
+            System.out.println(this.getNombre() + " se mueve volando.");
+        }
     }
 
     @Override
@@ -35,6 +42,7 @@ public class Abeja extends Insecto {
     public void comunicarUbicacionAlimento() {
         Random r = new Random();
         int numeroDireccion = r.nextInt(4) + 1;
+
         switch (numeroDireccion) {
             case  1 -> System.out.println(this.getNombre() + " ha encontrado alimento al norte.");
             case  2 -> System.out.println(this.getNombre() + " ha encontrado alimento al este.");
