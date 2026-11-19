@@ -2,6 +2,7 @@ package Zoo;
 
 import Zoo.Anfibio.Rana;
 import Zoo.Anfibio.Salamandra;
+import Zoo.Mamifero.Elefante;
 import Zoo.Insecto.Abeja;
 import Zoo.Pez.PezEspada;
 
@@ -16,6 +17,7 @@ public class Main {
         List<Animal> listaDeAnimales = new ArrayList<>();
         listaDeAnimales.add(new Rana());
         listaDeAnimales.add(new Salamandra());
+        listaDeAnimales.add(new Elefante());
         listaDeAnimales.add(new PezEspada());
 
         // Cada alumno puede añadir su animal así:
