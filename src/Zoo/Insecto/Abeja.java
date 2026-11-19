@@ -11,11 +11,8 @@ public class Abeja extends Insecto {
         this.tieneAlas = true;
     }
 
-    public Abeja (String nombre, int edad, float peso, int numeroPatas,  boolean tieneAlas, String color) {
+    public Abeja (String nombre, int edad, float peso) {
         super(nombre, edad, peso,4,true,"Amarillo");
-        this.numeroPatas = numeroPatas;
-        this.tieneAlas = tieneAlas;
-        this.color = color;
     }
 
     @Override

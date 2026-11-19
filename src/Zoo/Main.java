@@ -26,6 +26,7 @@ public class Main {
         listaDeAnimales.add(new Elefante());
         listaDeAnimales.add(new PezEspada());
         listaDeAnimales.add(new Hormiga());
+        listaDeAnimales.add(new Abeja());
 
         // Cada alumno puede añadir su animal así:
         // listaDeAnimales.add(new SuAnimal());
