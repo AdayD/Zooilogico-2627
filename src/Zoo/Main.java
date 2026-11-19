@@ -5,6 +5,7 @@ import Zoo.Anfibio.Salamandra;
 import Zoo.Mamifero.Elefante;
 import Zoo.Insecto.Abeja;
 import Zoo.Pez.PezEspada;
+import Zoo.Ave.Colibri;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Main {
         listaDeAnimales.add(new Salamandra());
         listaDeAnimales.add(new Elefante());
         listaDeAnimales.add(new PezEspada());
+        listaDeAnimales.add(new Colibri());
 
         // Cada alumno puede añadir su animal así:
         // listaDeAnimales.add(new SuAnimal());
