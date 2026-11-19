@@ -3,7 +3,9 @@ package Zoo.Ave;
 import Zoo.Animal;
 
 import java.util.Random;
-//creacion Ave
+
+
+
     public class Ave extends Animal {
         private String colorPlumas;
         private double envergadura;
@@ -17,7 +19,7 @@ import java.util.Random;
         public Ave() {
             super();
             Random random = new Random();
-            this.colorPlumas = colorPlumaje[random.nextInt(colorPlumas.length())];
+            this.colorPlumas = colorPlumaje[random.nextInt(colorPlumaje.length)];
             this.ponerHuevos = random.nextBoolean();
             this.puedeVolar = random.nextBoolean();
             this.envergadura = random.nextDouble();
@@ -34,9 +36,7 @@ import java.util.Random;
             this.acicalarse = acicalarse;
         }
 
-        protected void setColorPlumaje(String colorPlumajel) {
-            this.colorPlumas = colorPlumas;
-        }
+        protected void setColorPlumaje(String colorPlumajel) { this.colorPlumas = colorPlumajel;}
 
         public void volar() {
             System.out.println(getNombre() + " está volando.");
