@@ -4,40 +4,52 @@ import Zoo.Animal;
 import java.util.Random;
 
 public class Insecto extends Animal {
-    final String [] COLORES = { "Rojo", "Verde", "Amarillo", "Marrón" };
-    int numeroPatas;
-    boolean tieneAlas;
-    String color;
 
+    // Atributos comunes
+    private static final String [] COLORES = { "Rojo", "Verde", "Amarillo", "Marrón", "Negro", "Blanco", "Naranja",
+            "Verde esmeralda", "Azul metálico" };
+    private static final int NUMERO_PATAS = 6; // los insectos siempre tienen 3 pares de patas
+    private int numeroPatas;
+    private boolean tieneAlas;
+    private String color;
+
+    // Setters
+    protected void setTieneAlas( boolean tieneAlas ) { this.tieneAlas = tieneAlas; }
+    protected void setColor( String color ) { this.color = color; }
+
+    // Getters
+    protected int getNumeroPatas() { return this.numeroPatas; }
+    protected boolean getTieneAlas() { return this.tieneAlas; }
+    protected String getColor() { return this.color; }
+
+    // Comportamientos comunes
     public void moverAntenas() {
-        System.out.println( getNombre() + " mueve las antenas.");
+        System.out.println( getNombre() + " mueve las antenas." );
     }
-
     public void buscarRefugio() {
-        System.out.println( getNombre() + " busca refugio.");
+        System.out.println( getNombre() + " busca refugio." );
     }
-
     public void detectarVibraciones() {
-        System.out.println( getNombre() + " detecta vibraciones.");
+        System.out.println( getNombre() + " detecta vibraciones." );
     }
 
-    public Insecto () {
+    // Constructor sin parámetros
+    public Insecto() {
         super();
         Random r = new Random();
-        this.numeroPatas = r.nextInt(6) + 1;
-        this.color = COLORES[r.nextInt( COLORES.length - 1 )];
+        this.numeroPatas = NUMERO_PATAS;
         this.tieneAlas = r.nextBoolean();
     }
 
-    public Insecto (String nombre, int edad, float peso, int numeroPatas,  boolean tieneAlas, String color) {
-        super(nombre, edad, peso);
-        this.numeroPatas = numeroPatas;
+    // Constructor con parámetros
+    public Insecto( String nombre, int edad, float peso, /* int numeroPatas, */ boolean tieneAlas, String color ) {
+        super( nombre, edad, peso );
+        this.numeroPatas = NUMERO_PATAS;
         this.tieneAlas = tieneAlas;
         this.color = color;
     }
 
-
-    //VER ANIMAL
+    // Ver animal
     @Override
     public void verAnimal() {
         Random random = new Random();
@@ -48,18 +60,18 @@ public class Insecto extends Animal {
                 this::detectarVibraciones,
                 this::comer,
                 this::dormir,
-                this::moverse,
+                this::moverse
         };
 
         try {
-            for (int i = 0; i < 3; i++) { // Ejecuta 3 acciones aleatorias
-                int indiceAccion = random.nextInt(acciones.length);
-                acciones[indiceAccion].run(); // Ejecuta la acción seleccionada
+            for ( int i = 0; i < 3; i++ ) { // Ejecuta 3 acciones aleatorias
+                int indiceAccion = random.nextInt( acciones.length );
+                acciones[ indiceAccion ].run(); // Ejecuta la acción seleccionada
 
-                int tiempoEspera = random.nextInt(2000) + 1000; // Espera entre 1 y 2 segundos
-                Thread.sleep(tiempoEspera);
+                int tiempoEspera = random.nextInt( 2000 ) + 1000; // Espera entre 1 y 2 segundos
+                Thread.sleep( tiempoEspera );
             }
-        } catch (InterruptedException e) {
+        } catch ( InterruptedException e ) {
             e.printStackTrace();
         }
     }
