@@ -6,9 +6,9 @@ import java.util.Random;
 public class Insecto extends Animal {
 
     // Atributos comunes
-    private static final String [] COLORES = { "Rojo", "Verde", "Amarillo", "Marrón", "Negro", "Blanco", "Naranja",
+    public static final String [] COLORES = { "Rojo", "Verde", "Amarillo", "Marrón", "Negro", "Blanco", "Naranja",
             "Verde esmeralda", "Azul metálico" };
-    private static final int NUMERO_PATAS = 6; // los insectos siempre tienen 3 pares de patas
+    public static final int NUMERO_PATAS = 6; // los insectos siempre tienen 3 pares de patas
     private int numeroPatas;
     private boolean tieneAlas;
     private String color;
