@@ -3,6 +3,7 @@ package Zoo;
 
 import Zoo.Anfibio.Rana;
 import Zoo.Anfibio.Salamandra;
+import Zoo.Pez.PezPayaso;
 import Zoo.Reptiles.Tortuga;
 import Zoo.Ave.Loro;
 import Zoo.Mamifero.Elefante;
@@ -21,6 +22,7 @@ public class Main {
         List<Animal> listaDeAnimales = new ArrayList<>();
         listaDeAnimales.add(new Rana());
         listaDeAnimales.add(new Salamandra());
+        listaDeAnimales.add(new PezPayaso());
         listaDeAnimales.add(new Tortuga());
         listaDeAnimales.add(new Loro());
         listaDeAnimales.add(new Elefante());
