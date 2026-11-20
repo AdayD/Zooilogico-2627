@@ -1,9 +1,9 @@
-package Zoo.Insecto;
+package Zoo.OtroInsecto;
 import Zoo.Animal;
 
 import java.util.Random;
 
-public class Insecto extends Animal {
+public class OtroInsecto extends Animal {
 
     // Atributos comunes
     public static final String [] COLORES = { "Rojo", "Verde", "Amarillo", "Marrón", "Negro", "Blanco", "Naranja",
@@ -34,7 +34,7 @@ public class Insecto extends Animal {
     }
 
     // Constructor sin parámetros
-    public Insecto() {
+    public OtroInsecto() {
         super();
         Random r = new Random();
         this.numeroPatas = NUMERO_PATAS;
@@ -42,7 +42,7 @@ public class Insecto extends Animal {
     }
 
     // Constructor con parámetros
-    public Insecto( String nombre, int edad, float peso, /* int numeroPatas, */ boolean tieneAlas, String color ) {
+    public OtroInsecto(String nombre, int edad, float peso, /* int numeroPatas, */ boolean tieneAlas, String color ) {
         super( nombre, edad, peso );
         this.numeroPatas = NUMERO_PATAS;
         this.tieneAlas = tieneAlas;
