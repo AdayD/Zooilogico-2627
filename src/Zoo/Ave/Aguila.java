@@ -2,7 +2,7 @@ package Zoo.Ave;
 
 import java.util.Random;
 
-public class Aguila extends Ave { //edit para push
+public class Aguila extends Ave { //edit push
 
     private static final String[] colorPlumaje = {"Marrón", "Blanco", "Gris", "Azul", "Rojo", "Amarillo", "Verde"};
 
