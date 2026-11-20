@@ -10,6 +10,8 @@ import Zoo.Ave.Loro;
 import Zoo.Mamifero.Elefante;
 import Zoo.Insecto.Abeja;
 import Zoo.Pez.PezEspada;
+import Zoo.Ave.Colibri;
+
 import Zoo.Insecto.Hormiga;
 import Zoo.Reptiles.Iguana;
 
@@ -29,6 +31,9 @@ public class Main {
         listaDeAnimales.add(new Loro());
         listaDeAnimales.add(new Elefante());
         listaDeAnimales.add(new PezEspada());
+
+        listaDeAnimales.add(new Colibri());
+
         listaDeAnimales.add( new Saltamontes() );
         listaDeAnimales.add(new Hormiga());
         listaDeAnimales.add(new Iguana());

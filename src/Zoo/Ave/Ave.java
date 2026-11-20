@@ -19,6 +19,7 @@ import java.util.Random;
         public Ave() {
             super();
             Random random = new Random();
+
             this.colorPlumas = colorPlumaje[random.nextInt(colorPlumaje.length)];
             this.ponerHuevos = random.nextBoolean();
             this.puedeVolar = random.nextBoolean();
