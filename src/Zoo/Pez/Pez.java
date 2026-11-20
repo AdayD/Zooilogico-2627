@@ -1,5 +1,4 @@
-
-    package Zoo.Pez;
+package Zoo.Pez;
 
 import Zoo.Animal;
 
@@ -9,15 +8,17 @@ import java.util.Random;
         private String tipoAgua;
         private String colorPiel;
         private double longitud;
+
         private static final String[] tipoAguaPosible = {"salada", "dulce"};
         private static final String[] coloresPielPosibles = {"colorido", "color simple"};
+
         // Constructor sin parámetros
         public Pez() {
             super();
             Random random = new Random();
             this.colorPiel = coloresPielPosibles[random.nextInt(coloresPielPosibles.length)];
             this.tipoAgua = tipoAguaPosible[random.nextInt(tipoAguaPosible.length)];
-            this.longitud = random.nextDouble()+1;
+            this.longitud = 0.1 + (12.0 - 0.1) * random.nextDouble();
         }
 
         // Constructor con parámetros
@@ -28,23 +29,26 @@ import java.util.Random;
             this.longitud = longitud;
         }
 
-        protected void setColorPiel(String colorPiel) {
-            this.colorPiel = colorPiel;
-        }
-        protected void setTipoAgua(String tipoAgua) {
+        public void setTipoAgua(String tipoAgua) {
             this.tipoAgua = tipoAgua;
         }
-        protected void setLongitud(double longitud) {
+
+        public void setColorPiel(String colorPiel) {
+            this.colorPiel = colorPiel;
+        }
+
+        public void setLongitud(double longitud) {
             this.longitud = longitud;
         }
 
         public void nadar() {
-            System.out.println(getNombre() + " esta avanzando con aletas.");
+            System.out.println(getNombre() + " está avanzando con aletas.");
         }
 
         public void respirarBajoAgua() {
-            System.out.println(getNombre() + " esta usando sus branquias para respirar.");
+            System.out.println(getNombre() + " está usando sus branquias para respirar.");
         }
+
         public void buscarRefugio() {
             System.out.println(getNombre() + " se esconde en el agua.");
         }
@@ -58,7 +62,7 @@ import java.util.Random;
                     this::moverse,
                     this::nadar,
                     this::respirarBajoAgua,
-                    this::buscarRefugio,
+                    this::buscarRefugio
             };
 
             try {
