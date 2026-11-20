@@ -1,3 +1,14 @@
+/*
+    ZOOILÓGICO: OTRO INSECTO
+
+    Propuesta de nueva clase base para insecto con mejor ocultación de atributos y métodos. Base para mi clase
+    Saltamontes
+
+    Por Servando Pestano San Segundo
+    DAM-S-1-B
+
+*/
+
 package Zoo.OtroInsecto;
 import Zoo.Animal;
 
@@ -12,6 +23,9 @@ public class OtroInsecto extends Animal {
     private int numeroPatas;
     private boolean tieneAlas;
     private String color;
+
+    // Auxiliares
+    private Random random = new Random();
 
     // Setters
     protected void setTieneAlas( boolean tieneAlas ) { this.tieneAlas = tieneAlas; }
@@ -35,16 +49,18 @@ public class OtroInsecto extends Animal {
 
     // Constructor sin parámetros
     public OtroInsecto() {
+
         super();
-        Random r = new Random();
-        this.numeroPatas = NUMERO_PATAS;
-        this.tieneAlas = r.nextBoolean();
+
+        this.numeroPatas = NUMERO_PATAS; // todos los insectos tienen el mismo número de patas
+        this.tieneAlas = random.nextBoolean(); // insecto aleatorio con o sin alas
     }
 
     // Constructor con parámetros
     public OtroInsecto(String nombre, int edad, float peso, /* int numeroPatas, */ boolean tieneAlas, String color ) {
+
         super( nombre, edad, peso );
-        this.numeroPatas = NUMERO_PATAS;
+        this.numeroPatas = NUMERO_PATAS; // todos los insectos tienen el mismo número de patas
         this.tieneAlas = tieneAlas;
         this.color = color;
     }
@@ -52,7 +68,7 @@ public class OtroInsecto extends Animal {
     // Ver animal
     @Override
     public void verAnimal() {
-        Random random = new Random();
+
         // Lista de acciones posibles
         Runnable[] acciones = {
                 this::moverAntenas,
@@ -64,7 +80,9 @@ public class OtroInsecto extends Animal {
         };
 
         try {
+
             for ( int i = 0; i < 3; i++ ) { // Ejecuta 3 acciones aleatorias
+
                 int indiceAccion = random.nextInt( acciones.length );
                 acciones[ indiceAccion ].run(); // Ejecuta la acción seleccionada
 

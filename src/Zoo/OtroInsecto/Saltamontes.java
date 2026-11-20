@@ -12,9 +12,12 @@ import java.util.Random;
 public class Saltamontes extends OtroInsecto {
 
     // Atributos propios
-    private static final String[] ESPECIES = { "común", "de pradera", "palo", "narigudo", "hoja",
+    public static final String[] ESPECIES = { "común", "de pradera", "palo", "narigudo", "hoja",
         "de camuflaje", "de color llamativo", "de color de advertencia", "en fase gregaria (langosta)" };
     private String ordenYEspecie;
+
+    // Auxiliares
+    private Random random = new Random();
 
     // Setters
 
@@ -24,19 +27,16 @@ public class Saltamontes extends OtroInsecto {
     public Saltamontes() {
 
         super();
-        Random r = new Random();
-        setColor( COLORES[ r.nextInt( COLORES.length ) ] );
-        setTieneAlas( r.nextBoolean() );
-        ordenYEspecie = "saltamontes " + ESPECIES[ r.nextInt( ESPECIES.length ) ];
-
+        setColor( COLORES[ random.nextInt( COLORES.length ) ] ); // asigno color aleatorio
+        setTieneAlas( true ); // siempre tiene alas
+        ordenYEspecie = "saltamontes " + ESPECIES[ random.nextInt( ESPECIES.length ) ]; // asigno especie aleatoria
     }
 
     // Constructor con parámetros
-    public Saltamontes( String nombre, int edad, float peso, boolean tieneAlas, String color ) {
+    public Saltamontes( String nombre, int edad, float peso, String color ) {
 
-        super( nombre, edad, peso, tieneAlas, color );
-        Random r = new Random();
-        ordenYEspecie = "saltamontes " + ESPECIES[ r.nextInt( ESPECIES.length ) ];
+        super( nombre, edad, peso, true, color ); // siempre tiene alas
+        ordenYEspecie = "saltamontes " + ESPECIES[ random.nextInt( ESPECIES.length ) ]; // asigno especie aleatoria
     }
 
     // Comportamiento propio: Saltar
@@ -46,7 +46,7 @@ public class Saltamontes extends OtroInsecto {
         String infoSalto = "";
 
         // composición de la info del salto
-        int longitudSalto; // en centímetros
+        int longitudSalto; // en centímetros, entre 15 y 100
         String[] destinoSalto = {
                 "hacia el borde del estanque",
                 "a la rama del sauce",
@@ -67,10 +67,9 @@ public class Saltamontes extends OtroInsecto {
         };
 
         // aleatorio de longitud, destino y motivo del salto
-        Random r = new Random();
-        longitudSalto  = r.nextInt( 100 ) + 15;
-        int des = r.nextInt( destinoSalto.length );
-        int mot = r.nextInt( motivoSalto.length );
+        longitudSalto  = random.nextInt( 100 - 15 ) + 15; // entre 15 y 100 cm
+        int des = random.nextInt( destinoSalto.length );
+        int mot = random.nextInt( motivoSalto.length );
 
         // construyo-muestro info salto
         infoSalto = "%s, el %s, saltó %d centímetros %s %s.\n";
@@ -99,11 +98,11 @@ public class Saltamontes extends OtroInsecto {
         };
 
         // ¿hubo sonido?
-        Random r = new Random();
-        if ( true == ( huboEstridulacion = r.nextBoolean() ) )
-            infoSonido = motivoSonido[ r.nextInt( motivoNoSonido.length ) ];
+        if ( true == ( huboEstridulacion = random.nextBoolean() ) )
+            infoSonido = motivoSonido[ random.nextInt( motivoNoSonido.length ) ];
         else
-            infoSonido = motivoNoSonido[ r.nextInt( motivoSonido.length ) ];
+            infoSonido = motivoNoSonido[ random.nextInt( motivoSonido.length ) ];
+
         // muestro info
         System.out.printf( ( huboEstridulacion ? "E" : "No hay e") + "stridulación de %s, el %s, por %s.\n",
                                 this.getNombre(), ordenYEspecie, infoSonido );
@@ -118,8 +117,8 @@ public class Saltamontes extends OtroInsecto {
                 "semillas", "cereales", "frutos secos", "fruta", "verdura", // Otros vegetales
                 "insectos" // Ocasionalmente
         };
-        Random r = new Random();
-        String infoComida = "%s, el %s, está comiendo " + queCome[ r.nextInt( queCome.length ) ] + ".\n";
+
+        String infoComida = "%s, el %s, está comiendo " + queCome[ random.nextInt( queCome.length ) ] + ".\n";
         System.out.printf( infoComida, this.getNombre(), ordenYEspecie );
     }
 
@@ -129,8 +128,8 @@ public class Saltamontes extends OtroInsecto {
 
         String[] porDonde = { "entre los campos de cultivos", "entre praderas y pastizales",
                 "en zonas áridas y desérticas", "en bosques y selvas", "en un jardín urbano" };
-        Random r = new Random();
-        String infoMovimiento = "%s, el %s, se está moviendo " + porDonde[ r.nextInt( porDonde.length ) ] + ".\n";
+
+        String infoMovimiento = "%s, el %s, se está moviendo " + porDonde[ random.nextInt( porDonde.length ) ] + ".\n";
         System.out.printf( infoMovimiento, this.getNombre(), ordenYEspecie );
     }
 
@@ -145,7 +144,6 @@ public class Saltamontes extends OtroInsecto {
     @Override
     public void verAnimal() {
 
-        Random random = new Random();
         Runnable[] acciones = {
                 // comunes
                 this::moverAntenas,
@@ -161,7 +159,9 @@ public class Saltamontes extends OtroInsecto {
         };
 
         try {
+
             for ( int i = 0; i < 3; i++ ) {
+
                 int indiceAccion = random.nextInt( acciones.length );
                 acciones[ indiceAccion ].run();
 
