@@ -8,8 +8,8 @@ public class Tortuga extends Reptil {
         super();
     }
 
-    public Tortuga(String nombre, int edad, float peso, String tipoEscamas, String Habitat) {
-        super(nombre, edad, peso, tipoEscamas, Habitat);
+    public Tortuga(String nombre, int edad, float peso, String tipoEscamas, String Habitat, String esVenenoso) {
+        super(nombre, edad, peso, tipoEscamas, Habitat, esVenenoso);
     }
 
     public void meterCabeza() {

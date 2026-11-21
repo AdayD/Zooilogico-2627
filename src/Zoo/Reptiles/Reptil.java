@@ -10,6 +10,7 @@ public class Reptil extends Animal {
     private static final String[] tipoEscamasPosibles= {"lisas", "quilladas", "granulares"};
     private static final String[] habitatPosibles = {"desiertos", "selva", "bosque" , "rios"};
 
+
     public Reptil (){
         super ();
         Random random = new Random();
@@ -17,7 +18,7 @@ public class Reptil extends Animal {
         this.habitat = habitatPosibles[random.nextInt(habitatPosibles.length)];
     }
 
-    public Reptil (String nombre, int edad, float peso, String tipoEscamas, String habitat) {
+    public Reptil (String nombre, int edad, float peso, String tipoEscamas, String habitat, String especiePosible) {
         super(nombre, edad, peso);
         this.tipoEscamas = tipoEscamas;
         this.habitat = habitat;
@@ -43,6 +44,7 @@ public class Reptil extends Animal {
                 this::tomarSol,
                 this::mudarPiel,
                 this::esconderse,
+
         };
         try {
             for (int i = 0; i < 3; i++) {
