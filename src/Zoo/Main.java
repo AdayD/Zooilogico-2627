@@ -4,6 +4,7 @@ package Zoo;
 import Zoo.Anfibio.Rana;
 import Zoo.Anfibio.Salamandra;
 import Zoo.Reptiles.DragonDeKomodo;
+import Zoo.Mamifero.Leon;
 import Zoo.OtroInsecto.Saltamontes;
 import Zoo.Pez.PezPayaso;
 import Zoo.Reptiles.Tortuga;
@@ -14,7 +15,6 @@ import Zoo.Pez.PezEspada;
 import Zoo.Ave.Colibri;
 import Zoo.Insecto.Hormiga;
 import Zoo.Reptiles.Iguana;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +27,7 @@ public class Main {
 
         listaDeAnimales.add(new Rana());
         listaDeAnimales.add(new Salamandra());
+        listaDeAnimales.add(new Leon());
         listaDeAnimales.add(new PezPayaso());
         listaDeAnimales.add(new Tortuga());
         listaDeAnimales.add(new Loro());

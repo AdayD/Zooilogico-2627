@@ -19,7 +19,6 @@ import java.util.Random;
         public Ave() {
             super();
             Random random = new Random();
-
             this.colorPlumas = colorPlumaje[random.nextInt(colorPlumaje.length)];
             this.ponerHuevos = random.nextBoolean();
             this.puedeVolar = random.nextBoolean();
@@ -37,7 +36,9 @@ import java.util.Random;
             this.acicalarse = acicalarse;
         }
 
-        protected void setColorPlumaje(String colorPlumajel) { this.colorPlumas = colorPlumajel;}
+        protected void setColorPlumaje(String colorPlumaje) {
+            this.colorPlumas = colorPlumaje;
+        }
 
         public void volar() {
             System.out.println(getNombre() + " está volando.");
